@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>For You</title>
+    </head>
+    <body>
+        <div class='position-absolute top-50 start-50 translate-middle'>
+            <button id='button' class='btn btn-primary btn-lg' onclick='mulai()'> Click Here! </button>
+            <audio id='bgMusic' src='https://media1.vocaroo.com/mp3/1lUI5lkoyzg1' loop></audio>
+            <div id='iloveyou' style='display: none;'>
+                <h2 class='text-center'>Aku &#10084;&#65039; kamu</h2>
+            </div>
+        </div>
+        <span id='hati' class='fixed-bottom text-center my-3' onclick='hati()'></span>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+        <script type="text/javascript">
+            const author = 'Kris';
+            document.getElementById('hati').innerHTML = `Made with &#10084;&#65039; by ${author}<br>Everything happens for a reason and I believe you are the reason`;
+            const swals = Swal.mixin({
+                cancelButtonColor: '#d33',
+                confirmButtonColor: '#3085d6',
+            });
+            async function mulai(){
+            	audio = document.getElementById("bgMusic");
+            if (!audioPlaying) audio.play();
+            else audio.pause();
+            audioPlaying = !audioPlaying;
+                await swals.fire('Halo Manis', 'Aku bikin sesuatu nih', 'question');
+                await swals.fire('Tapi jawabnya jujur ya');
+                await swals.fire('Jangan boong lho ya','','error');
+                var { value: nama } = await swals.fire({
+                    title: 'Kasi nama kamu dulu',
+                    input: 'text',
+                    showCancelButton: true,
+                });
+                if(nama){
+                    var { isConfirmed: seneng } = await swals.fire({
+                        title: `${nama} seneng ngga kemaren malem nonton bareng?`,
+                        confirmButtonText: 'seneng',
+                        cancelButtonText: 'NGGA! <- jahat sih kalo milih ini :(',
+                        showCancelButton: true,
+                    });
+                    if(seneng){
+                        await swals.fire('Mas juga seneng banget kemaren bisa nonton sama kamu');
+                        await swals.fire('Mas kira pas pertama ngajakin nonton dulu bakal bilang ngga atau nolak gimana');
+                        await swals.fire('eh ternyata engga dong hehe');
+                        await swals.fire('dari semalem abis nonton itu kepikiran terus sama omongan kamu');
+                        await swals.fire('yang ituu.. baru pertama pulang paling malem di atas jam 10');
+                        await swals.fire('kamu cerita juga kalo sama pacar kamu yang dulu apa sama temen kalo pulang kemalemem mesti di telponin XD')
+                        await swals.fire('yaa mas sih mikirnya kok bisa ya? apa bener papa sama mama udah kasi kepercayaan gitu? XD');
+                        await swals.fire('kalo iya sih yaa syukur deh jadi kan kamu ngga kena omel, mas juga jadi ngga punya rasa pekewuh wkwk');
+                        await swals.fire('bell..');
+                        await swals.fire('sesuai sama background lagunya, ada hal yang mau aku utarakan di sini');
+                        await swals.fire('lewat pesan ini');
+                        await swals.fire('I just want to let you know, how greatful I am to meet someone like you');
+                        await swals.fire('words could not describe how glad I watch movie with you');
+                        await swals.fire('having a good dinner time to celebrate your dad`s birthday');
+                        await swals.fire('It means a lot for me');
+                        await swals.fire('I feel safe when you encourage me');
+                        await swals.fire('It feels like can be the better version of myself');
+                        await swals.fire('thank you for letting me know you :) ');
+                        await swals.fire('but');
+                        await swals.fire('I dont wanna lose this feeling anymore');
+                        await swals.fire('If you grant me permission, can I be the one for you?');
+                        await swals.fire('pencet simbol love di bawah');
+                    };
+                    if(popo){
+                        await swals.fire('Aku juga sayang banget sama kamu');
+                        var { value: persen } = await swals.fire({
+                            title: 'Seberapa sayang emangnya?',
+                            icon: 'question',
+                            input: 'range',
+                            inputLabel: 'dari 1-100',
+                            inputAttributes: {
+                                min: 1,
+                                max: 100,
+                            },
+                            inputValue: 50
+                        })
+                    } else {
+                        //NGGA! <- jahat sih kalo milih ini :(
+                    }
+                } else {
+                    //gak isi nama
+                }
+            }
+        function hati(){
+            document.getElementById('button').style = 'display: none';
+            document.getElementById('iloveyou').style = '';
+            startConfetti();
+        }
+        var audioPlaying = false;
+        function music(){
+            var audio = document.getElementById("bgMusic");
+            if (!audioPlaying) audio.play();
+            else audio.pause();
+            audioPlaying = !audioPlaying;
+        }
+        </script>
+        <script type="text/javascript" src="https://www.cssscript.com/demo/confetti-falling-animation/confetti.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <style>
+    body {
+background-image : url("https://s10.gifyu.com/images/WhatsApp-Video-2021-12-12-at-10.17.53-PM.gif");
+background-color : #cccccc;
+}
+    </style>
+    </body>
+</html>
